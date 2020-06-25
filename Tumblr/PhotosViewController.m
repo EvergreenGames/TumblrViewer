@@ -62,11 +62,11 @@
         NSDictionary* originalSize = photo[@"original_size"];
         NSString* urlString = originalSize[@"url"];
         NSURL* photoURL = [NSURL URLWithString:urlString];
-        
-        //NSLog(urlString);
-        
+                
         [cell.photoImageView setImageWithURL:photoURL];
     }
+    
+    cell.dateLabel.text = [post[@"date"] substringToIndex:10];
     
     return cell;
 }
